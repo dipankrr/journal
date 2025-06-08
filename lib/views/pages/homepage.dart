@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_journal/views/main_body.dart';
@@ -10,12 +12,16 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final dateProvider = Provider.of<DateProvider>(context);
+    double mediaWidth = MediaQuery.of(context).size.width;
+    double mediaHeight = MediaQuery.of(context).size.height;
+    //print(mediaWidth);
 
     return Scaffold(
       body: Center(
         child: SizedBox(
-          height: MediaQuery.of(context).size.height - 400,
-          width: MediaQuery.of(context).size.width - 20,
+          height: mediaHeight - 400,
+          width: min(mediaWidth * 0.9, 700),
+
           child: Card(
             child: Row(
               children: [
@@ -28,18 +34,8 @@ class Homepage extends StatelessWidget {
                       color: Colors.white10,
                       child: Column(
                         children: [
-                          IconButton(onPressed: () async {
-                           DateTime? date = await showDatePicker(
-                                context: context,
-                                firstDate: DateTime(2010),
-                                lastDate: DateTime(2040),
-                                initialDate: dateProvider.selectedDate
-                            );
-
-                             dateProvider.setDate(date!);
-                          }, icon: Icon(Icons.calendar_today)),
                           
-                         // ListWheelScrollView(itemExtent: itemExtent, children: children)
+                         //ListWheelScrollView(itemExtent: itemExtent, children: children)
                         ],
                       ),
                     ),
