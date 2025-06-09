@@ -32,7 +32,7 @@ class MainBody extends StatelessWidget {
 
                 Row(
                   children: [
-                    ArrowButton(icon: Icons.arrow_back_ios_new_rounded,onTap: (){dateProvider.getPreviousDate();}),
+                    ArrowButton(icon: Icons.arrow_back_ios_new_rounded,onTap: (){dateProvider.getPreviousDate(dateProvider.indexOfaDay(dateProvider.selectedDate));}),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ArrowButton(icon: Icons.arrow_forward_ios_rounded, onTap: (){dateProvider.getForwardDate();},),

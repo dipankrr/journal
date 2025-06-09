@@ -33,3 +33,5 @@ class MyApp extends StatelessWidget {
 }
 
 // flutter run -d web-server --web-hostname=192.168.0.101 --web-port=8000
+
+// i have implemented this in a vertical bar where date can be selected, now want a feature, i want a circled box on the middle of that bar and which ever date will be fall on the circle that date will be considered as selected date while scrolling. also user can select by tapping avialabe dates beside of that circle and after tapping the date will reposition in the middle where the circle is on top 

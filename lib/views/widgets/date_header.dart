@@ -28,7 +28,7 @@ class DateHeader extends StatelessWidget {
         },
 
         onDoubleTap: (){
-          dateProvider.resetToCurrentDate();
+          dateProvider.resetToCurrentDate(dateProvider.indexOfaDay(dateProvider.selectedDate));
         },
 
         child: Text(
