@@ -11,24 +11,27 @@ class DateHeader extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final dateProvider = Provider.of<DateProvider>(context);
-    String formattedDate = DateFormat('d MMM').format(dateProvider.selectedDate);
+    DateTime date = dateProvider.selectedDate;
+
+    String formattedDate = date.year == DateTime.now().year ?
+    DateFormat('d MMM').format(date) : DateFormat("d MMM ''yy").format(date) ;
 
     return GestureDetector(
-
 
         onTap: () async{
 
           DateTime? date = await showDatePicker(
               context: context,
-              firstDate: DateTime(2010),
-              lastDate: DateTime(2040),
+              firstDate: dateProvider.startDate,
+              lastDate: dateProvider.endDate,
               initialDate: dateProvider.selectedDate
           );
           dateProvider.setDate(date!);
+          dateProvider.scrollToIndex(dateProvider.indexOfaDay(date));
         },
 
         onDoubleTap: (){
-          dateProvider.resetToCurrentDate(dateProvider.indexOfaDay(dateProvider.selectedDate));
+          dateProvider.resetToCurrentDate();
         },
 
         child: Text(

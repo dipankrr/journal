@@ -15,10 +15,10 @@ class Homepage extends StatelessWidget {
     double mediaWidth = MediaQuery.of(context).size.width;
     double mediaHeight = MediaQuery.of(context).size.height;
 
-    final List<String> dates = List.generate(31, (index) => ' $index');
-    int todayIndex = DateTime.now().day - 1;
-    FixedExtentScrollController controller =
-        FixedExtentScrollController(initialItem: todayIndex);
+    // final List<String> dates = List.generate(31, (index) => ' $index');
+    // int todayIndex = DateTime.now().day - 1;
+    // FixedExtentScrollController controller =
+    //     FixedExtentScrollController(initialItem: todayIndex);
 
     //print(mediaWidth);
 
@@ -40,19 +40,19 @@ class Homepage extends StatelessWidget {
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
-                          Column(
-                            children: [
-                              Expanded(child: DateBar(),),
-                            ],
-                          ),
                           Container(
-                            width: 30,
-                            height: 30,
+                            width: 35,
+                            height: 35,
                             decoration: BoxDecoration(
-                              color: Colors.white30.withOpacity(0.2),
+                              color: Colors.black.withOpacity(0.3),
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
+                        Column(
+                            children: [
+                              Expanded(child: DateBar(),),
+                            ],
+                          )
                         ],
                       ),
                     ),

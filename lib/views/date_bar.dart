@@ -37,18 +37,10 @@ class _DateBarState extends State<DateBar> {
   @override
   void initState() {
     super.initState();
-    final dateProvider = Provider.of<DateProvider>(context, listen: false);
-    dateProvider.makeDateList();
-    dateProvider.controller = FixedExtentScrollController(initialItem: dateProvider.indexOfaDay(DateTime.now()));
+    // final dateProvider = Provider.of<DateProvider>(context, listen: false);
+    // dateProvider.makeDateList();
+    // dateProvider.controller = FixedExtentScrollController(initialItem: dateProvider.indexOfaDay(DateTime.now()));
   }
-
-  // void scrollToIndex(index) {
-  //   _controller.animateToItem(
-  //     index,
-  //     duration: Duration(milliseconds: 300),
-  //     curve: Curves.easeInOut,
-  //   );
-  // }
 
 
   @override
